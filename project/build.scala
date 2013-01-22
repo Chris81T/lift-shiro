@@ -3,15 +3,15 @@ import sbt._, Keys._
 object BuildSettings {
   val buildOrganization = "eu.getintheloop"
   val buildVersion      = "0.0.7-SNAPSHOT"
-  val buildScalaVersion = "2.9.2"
+  val buildScalaVersion = "2.10.0"
 
   val buildSettings = Defaults.defaultSettings ++ Seq (
     organization := buildOrganization,
     version      := buildVersion,
     scalaVersion := buildScalaVersion,
-    scalaVersion := "2.9.2",
+    scalaVersion := "2.10.0",
     scalacOptions += "-deprecation",
-    crossScalaVersions := Seq("2.9.1", "2.9.2"),
+    crossScalaVersions := Seq("2.9.1", "2.9.2", "2.10.0"),
     resolvers ++= Seq(
       ScalaToolsReleases,
       "Shiro Releases" at "https://repository.apache.org/content/repositories/releases/",
@@ -64,9 +64,9 @@ object LiftShiroBuild extends Build {
   lazy val library: Project = Project("lift-shiro", file("library"), 
     settings = BuildSettings.buildSettings ++ (
       libraryDependencies ++= Seq(
-        "net.liftweb" %% "lift-webkit" % "2.5-M3" % "compile",
-        "org.apache.shiro" % "shiro-core" % "1.2.0",
-        "org.apache.shiro" % "shiro-web" % "1.2.0",
+        "net.liftweb" %% "lift-webkit" % "2.5-M4" % "compile",
+        "org.apache.shiro" % "shiro-core" % "1.2.1",
+        "org.apache.shiro" % "shiro-web" % "1.2.1",
         "commons-beanutils" % "commons-beanutils" % "20030211.134440"
       )
     )
